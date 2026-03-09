@@ -1,0 +1,246 @@
+[gd_scene format=3 uid="uid://0hrjt380ga4k"]
+
+[ext_resource type="Script" uid="uid://ccep5gst7yd6q" path="res://scripts/main_menu.gd" id="1_ekxnf"]
+[ext_resource type="Theme" uid="uid://bdkitdw7ewaqg" path="res://themes/new_theme.tres" id="2_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://dpwpdlw2shx2k" path="res://textures/mainmenu.png" id="2_wu84c"]
+[ext_resource type="AudioStream" uid="uid://e72ayr2ln0o4" path="res://music/main_menu.mp3" id="3_bqqt6"]
+
+[sub_resource type="FontFile" id="FontFile_wu84c"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/1/variation_coordinates = {}
+cache/1/face_index = 0
+cache/1/embolden = 0.0
+cache/1/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/1/spacing_top = 0
+cache/1/spacing_bottom = 0
+cache/1/spacing_space = 0
+cache/1/spacing_glyph = 1
+cache/1/baseline_offset = 0.0
+cache/1/16/0/ascent = 0.0
+cache/1/16/0/descent = 0.0
+cache/1/16/0/underline_position = 0.0
+cache/1/16/0/underline_thickness = 0.0
+cache/1/16/0/scale = 1.0
+cache/1/25/0/ascent = 0.0
+cache/1/25/0/descent = 0.0
+cache/1/25/0/underline_position = 0.0
+cache/1/25/0/underline_thickness = 0.0
+cache/1/25/0/scale = 1.0
+cache/2/variation_coordinates = {}
+cache/2/face_index = 0
+cache/2/embolden = 0.0
+cache/2/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/2/spacing_top = 0
+cache/2/spacing_bottom = 0
+cache/2/spacing_space = 0
+cache/2/spacing_glyph = 2
+cache/2/baseline_offset = 0.0
+cache/2/16/0/ascent = 0.0
+cache/2/16/0/descent = 0.0
+cache/2/16/0/underline_position = 0.0
+cache/2/16/0/underline_thickness = 0.0
+cache/2/16/0/scale = 1.0
+cache/2/25/0/ascent = 0.0
+cache/2/25/0/descent = 0.0
+cache/2/25/0/underline_position = 0.0
+cache/2/25/0/underline_thickness = 0.0
+cache/2/25/0/scale = 1.0
+cache/3/variation_coordinates = {}
+cache/3/face_index = 0
+cache/3/embolden = 0.0
+cache/3/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/3/spacing_top = 0
+cache/3/spacing_bottom = 0
+cache/3/spacing_space = 0
+cache/3/spacing_glyph = 3
+cache/3/baseline_offset = 0.0
+cache/3/16/0/ascent = 0.0
+cache/3/16/0/descent = 0.0
+cache/3/16/0/underline_position = 0.0
+cache/3/16/0/underline_thickness = 0.0
+cache/3/16/0/scale = 1.0
+cache/3/25/0/ascent = 0.0
+cache/3/25/0/descent = 0.0
+cache/3/25/0/underline_position = 0.0
+cache/3/25/0/underline_thickness = 0.0
+cache/3/25/0/scale = 1.0
+cache/4/variation_coordinates = {}
+cache/4/face_index = 0
+cache/4/embolden = 0.0
+cache/4/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/4/spacing_top = 0
+cache/4/spacing_bottom = 0
+cache/4/spacing_space = 0
+cache/4/spacing_glyph = 4
+cache/4/baseline_offset = 0.0
+cache/4/16/0/ascent = 0.0
+cache/4/16/0/descent = 0.0
+cache/4/16/0/underline_position = 0.0
+cache/4/16/0/underline_thickness = 0.0
+cache/4/16/0/scale = 1.0
+cache/4/25/0/ascent = 0.0
+cache/4/25/0/descent = 0.0
+cache/4/25/0/underline_position = 0.0
+cache/4/25/0/underline_thickness = 0.0
+cache/4/25/0/scale = 1.0
+cache/5/variation_coordinates = {}
+cache/5/face_index = 0
+cache/5/embolden = 0.0
+cache/5/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/5/spacing_top = 0
+cache/5/spacing_bottom = 0
+cache/5/spacing_space = 0
+cache/5/spacing_glyph = 5
+cache/5/baseline_offset = 0.0
+cache/5/16/0/ascent = 0.0
+cache/5/16/0/descent = 0.0
+cache/5/16/0/underline_position = 0.0
+cache/5/16/0/underline_thickness = 0.0
+cache/5/16/0/scale = 1.0
+cache/5/25/0/ascent = 0.0
+cache/5/25/0/descent = 0.0
+cache/5/25/0/underline_position = 0.0
+cache/5/25/0/underline_thickness = 0.0
+cache/5/25/0/scale = 1.0
+cache/6/variation_coordinates = {}
+cache/6/face_index = 0
+cache/6/embolden = 0.0
+cache/6/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/6/spacing_top = 0
+cache/6/spacing_bottom = 0
+cache/6/spacing_space = 0
+cache/6/spacing_glyph = 6
+cache/6/baseline_offset = 0.0
+cache/6/16/0/ascent = 0.0
+cache/6/16/0/descent = 0.0
+cache/6/16/0/underline_position = 0.0
+cache/6/16/0/underline_thickness = 0.0
+cache/6/16/0/scale = 1.0
+cache/6/25/0/ascent = 0.0
+cache/6/25/0/descent = 0.0
+cache/6/25/0/underline_position = 0.0
+cache/6/25/0/underline_thickness = 0.0
+cache/6/25/0/scale = 1.0
+
+[sub_resource type="FontVariation" id="FontVariation_8ln24"]
+base_font = SubResource("FontFile_wu84c")
+spacing_glyph = 6
+
+[sub_resource type="Theme" id="Theme_ekxnf"]
+default_font = SubResource("FontVariation_8ln24")
+default_font_size = 25
+
+[node name="MainMenu" type="Control" unique_id=509349647 node_paths=PackedStringArray("play_button", "quit_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_ekxnf")
+play_button = NodePath("MainMenuControls/PlayButton")
+quit_button = NodePath("MainMenuControls/QuitButton")
+cursor = ExtResource("2_wu84c")
+
+[node name="Control" type="Control" parent="." unique_id=726376101]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlackBackground" type="ColorRect" parent="Control" unique_id=937406321]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Vic3" type="TextureRect" parent="Control" unique_id=741997122]
+modulate = Color(1, 1, 1, 0.23529412)
+layout_mode = 0
+offset_left = -121.0
+offset_top = -2.0
+offset_right = 903.0
+offset_bottom = 766.0
+texture = ExtResource("2_wu84c")
+
+[node name="Vic2" type="TextureRect" parent="Control" unique_id=1642298488]
+modulate = Color(1, 1, 1, 0.11764706)
+layout_mode = 0
+offset_left = -269.0
+offset_top = -2.0
+offset_right = 755.0
+offset_bottom = 766.0
+texture = ExtResource("2_wu84c")
+
+[node name="Vic1" type="TextureRect" parent="Control" unique_id=332621964]
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 768.0
+texture = ExtResource("2_wu84c")
+
+[node name="MainMenuControls" type="VBoxContainer" parent="." unique_id=419030217]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 460.0
+offset_right = 266.0
+offset_bottom = 575.0
+alignment = 1
+
+[node name="ProjectName" type="Label" parent="MainMenuControls" unique_id=162907970]
+layout_mode = 2
+size_flags_vertical = 8
+theme = SubResource("Theme_ekxnf")
+text = ".aberdeen"
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="MainMenuControls" unique_id=1397531591]
+layout_mode = 2
+theme = ExtResource("2_bqqt6")
+text = "  play"
+flat = true
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="MainMenuControls" unique_id=1366730209]
+layout_mode = 2
+theme = ExtResource("2_bqqt6")
+text = "  quit"
+flat = true
+alignment = 0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=1446896375]
+stream = ExtResource("3_bqqt6")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="mouse_entered" from="MainMenuControls/PlayButton" to="." method="_on_play_button_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenuControls/PlayButton" to="." method="_on_play_button_mouse_exited"]
+[connection signal="pressed" from="MainMenuControls/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="mouse_entered" from="MainMenuControls/QuitButton" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="MainMenuControls/QuitButton" to="." method="_on_quit_button_mouse_exited"]
+[connection signal="pressed" from="MainMenuControls/QuitButton" to="." method="_on_quit_button_pressed"]
