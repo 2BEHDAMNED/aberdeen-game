@@ -162,6 +162,16 @@ flat = true
 alignment = 0
 script = ExtResource("5_rtw2f")
 
+[node name="SettingsButton" type="Button" parent="MainMenuControls" unique_id=907138651]
+layout_mode = 2
+focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../QuitButton")
+theme = ExtResource("2_bqqt6")
+text = "settings"
+flat = true
+alignment = 0
+script = ExtResource("5_rtw2f")
+
 [node name="QuitButton" type="Button" parent="MainMenuControls" unique_id=1366730209]
 layout_mode = 2
 focus_neighbor_top = NodePath("../PlayButton")
