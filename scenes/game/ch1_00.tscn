@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://3qa5p58nebb8"]
+
+[ext_resource type="PackedScene" uid="uid://citbnfpd8xyv2" path="res://scenes/player.tscn" id="1_52yd7"]
+[ext_resource type="PackedScene" uid="uid://d07pk2nfvgdks" path="res://scenes/fade_in.tscn" id="2_8ki8l"]
+
+[node name="Node3D" type="Node3D" unique_id=1927240936]
+
+[node name="Camera3D" parent="." unique_id=839005021 instance=ExtResource("1_52yd7")]
+
+[node name="FadeIn" parent="." unique_id=1868382498 instance=ExtResource("2_8ki8l")]
+multiplier = 0.25

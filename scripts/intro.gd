@@ -25,7 +25,16 @@ func _ready():
 	
 	$ScribblesRect.modulate.a = 0
 
+var load_door = false
+
 func _process(delta: float) -> void:
+	if not $FramesRect.visible and not $ScribblesRect.visible and load_door:
+		time += delta
+		
+		if time > 2.0:
+			_on_timer_timeout()
+			load_door = false
+	
 	if not $FramesRect.visible and current_index == 0:
 		if alpha < 12.0/256.0:
 			alpha += 1*delta*0.005
@@ -59,5 +68,10 @@ func _process(delta: float) -> void:
 				$FramesRect.visible = false
 				$ScribblesRect.visible = false
 				$AudioStreamPlayer.stop()
+				load_door = true
+				time = 0.0
 			else:
 				$FramesRect.texture = textures[current_index][1]
+
+func _on_timer_timeout() -> void:
+	SceneManager.goto_scene_via_door("res://scenes/game/ch1_00.tscn")

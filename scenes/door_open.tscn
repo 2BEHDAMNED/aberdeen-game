@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://bg5fjepb1l16l"]
+
+[ext_resource type="Script" uid="uid://352kfgq1xcuj" path="res://scripts/door_open_main.gd" id="1_2ibvm"]
+[ext_resource type="Texture2D" uid="uid://dtatpftdli1sh" path="res://textures/door.png" id="1_2jvas"]
+[ext_resource type="Script" uid="uid://dasesto5oxmtt" path="res://scripts/door_open.gd" id="2_iccp6"]
+[ext_resource type="AudioStream" uid="uid://b8kit5tbvfdud" path="res://sounds/door.mp3" id="3_nfgqb"]
+
+[sub_resource type="Environment" id="Environment_uq68b"]
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_light_energy = 0.0
+fog_density = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iccp6"]
+albedo_texture = ExtResource("1_2jvas")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_uq68b"]
+material = SubResource("StandardMaterial3D_iccp6")
+size = Vector2(0.6, 1)
+
+[sub_resource type="Animation" id="Animation_2jvas"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TheDoor:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TheDoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.3, 0, -0.69314384)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TheDoor/MeshInstance3D/AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:fog_depth_end")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_iccp6"]
+resource_name = "open"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TheDoor:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.7, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.5707964, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TheDoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7, 3.1, 4.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.3, 0, -0.8905771), Vector3(-0.3, 0, -0.76449805), Vector3(-0.3, 0, -0.76449805), Vector3(-0.3, 0, 0.489)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TheDoor/MeshInstance3D/AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.43333334),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("WorldEnvironment:environment:fog_depth_end")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nfgqb"]
+_data = {
+&"RESET": SubResource("Animation_2jvas"),
+&"open": SubResource("Animation_iccp6")
+}
+
+[node name="DoorOpenThing" type="Node3D" unique_id=1103263260]
+script = ExtResource("1_2ibvm")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1512648809]
+environment = SubResource("Environment_uq68b")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=54345614]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1161778, 0)
+
+[node name="TheDoor" type="Node3D" parent="." unique_id=1415604959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, -0.69314384)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="TheDoor" unique_id=916941007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0, 0)
+mesh = SubResource("QuadMesh_uq68b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TheDoor/MeshInstance3D" unique_id=1773980827]
+root_node = NodePath("../../..")
+libraries/ = SubResource("AnimationLibrary_nfgqb")
+script = ExtResource("2_iccp6")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TheDoor/MeshInstance3D" unique_id=268656693]
+stream = ExtResource("3_nfgqb")

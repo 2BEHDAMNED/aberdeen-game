@@ -18,7 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_es01l")
-textures = Array[Array]([[5.0, ExtResource("2_es01l")], [3.0, ExtResource("3_t1qkj")], [8.0, ExtResource("4_272cy")]])
+textures = Array[Array]([[5.0, ExtResource("2_es01l")], [3.0, ExtResource("3_t1qkj")], [4.0, ExtResource("4_272cy")]])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=135570868]
 layout_mode = 1
