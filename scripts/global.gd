@@ -1,5 +1,7 @@
 extends Node
 
+# https://github.com/godotengine/godot-demo-projects/tree/master/loading/autoload
+
 var g_path = ""
 
 func goto_scene(path: String) -> void:
