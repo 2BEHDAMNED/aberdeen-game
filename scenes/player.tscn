@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://citbnfpd8xyv2"]
 
 [ext_resource type="Texture2D" uid="uid://b6o83cbkw5eqt" path="res://textures/phone.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bws0ajagrkvpt" path="res://scripts/player.gd" id="1_g2els"]
 
-[node name="Camera3D" type="Camera3D" unique_id=839005021]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
+
+[node name="ThePlayer" type="CharacterBody3D" unique_id=661991523]
+disable_mode = 1
+script = ExtResource("1_g2els")
 
 [node name="Control" type="Control" parent="." unique_id=1569651697]
 layout_mode = 3
@@ -13,14 +18,38 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=1221172274]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 57.0
-offset_top = 33.0
-offset_right = 57.0
-offset_bottom = 41.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = -204.0
+offset_right = 528.0
+offset_bottom = 396.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_3vyb7")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Control" unique_id=1468164275]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "INPUT: KEYBOARD"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=574270594]
+shape = SubResource("CapsuleShape3D_3vyb7")
+debug_color = Color(0, 0.6, 0.7019608, 1)
+
+[node name="Head" type="Node3D" parent="." unique_id=1481191149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.516, 0)
+
+[node name="Camera" type="Camera3D" parent="Head" unique_id=1822165570]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Camera" unique_id=1840122393]
+transform = Transform3D(0.995797, 0.014144312, 0.090489045, -0.02167448, 0.996332, 0.08278302, -0.08898617, -0.084396385, 0.9924509, 0.27570313, 0, 0)
+spot_range = 5.010758
+spot_angle = 28.92696

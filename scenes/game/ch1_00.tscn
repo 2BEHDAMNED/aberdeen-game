@@ -3,9 +3,42 @@
 [ext_resource type="PackedScene" uid="uid://citbnfpd8xyv2" path="res://scenes/player.tscn" id="1_52yd7"]
 [ext_resource type="PackedScene" uid="uid://d07pk2nfvgdks" path="res://scenes/fade_in.tscn" id="2_8ki8l"]
 
+[sub_resource type="Environment" id="Environment_4e07n"]
+fog_enabled = true
+fog_light_color = Color(0, 0, 0, 1)
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8ki8l"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kgh0j"]
+
 [node name="Node3D" type="Node3D" unique_id=1927240936]
 
-[node name="Camera3D" parent="." unique_id=839005021 instance=ExtResource("1_52yd7")]
+[node name="ThePlayer" parent="." unique_id=839005021 instance=ExtResource("1_52yd7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5890285, 0)
+disable_mode = 0
 
 [node name="FadeIn" parent="." unique_id=1868382498 instance=ExtResource("2_8ki8l")]
-multiplier = 0.25
+multiplier = 1.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=886916496]
+environment = SubResource("Environment_4e07n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1847202372]
+transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_8ki8l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1195759076]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=467159056]
+shape = SubResource("BoxShape3D_kgh0j")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=553898691]
+transform = Transform3D(10, 0, 0, 0, -8.742278e-09, -10, 0, 0.2, -4.371139e-07, 0.6895714, 3.6520295, -5)
+mesh = SubResource("BoxMesh_8ki8l")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=247676680]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=85361130]
+shape = SubResource("BoxShape3D_kgh0j")
