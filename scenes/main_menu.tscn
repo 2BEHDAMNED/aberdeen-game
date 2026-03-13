@@ -155,7 +155,7 @@ vertical_alignment = 1
 [node name="PlayButton" type="Button" parent="MainMenuControls" unique_id=1397531591]
 layout_mode = 2
 focus_neighbor_top = NodePath("../QuitButton")
-focus_neighbor_bottom = NodePath("../QuitButton")
+focus_neighbor_bottom = NodePath("../SettingsButton")
 theme = ExtResource("2_bqqt6")
 text = "play"
 flat = true
@@ -164,7 +164,7 @@ script = ExtResource("5_rtw2f")
 
 [node name="SettingsButton" type="Button" parent="MainMenuControls" unique_id=907138651]
 layout_mode = 2
-focus_neighbor_top = NodePath("../QuitButton")
+focus_neighbor_top = NodePath("../PlayButton")
 focus_neighbor_bottom = NodePath("../QuitButton")
 theme = ExtResource("2_bqqt6")
 text = "settings"
@@ -174,7 +174,7 @@ script = ExtResource("5_rtw2f")
 
 [node name="QuitButton" type="Button" parent="MainMenuControls" unique_id=1366730209]
 layout_mode = 2
-focus_neighbor_top = NodePath("../PlayButton")
+focus_neighbor_top = NodePath("../SettingsButton")
 focus_neighbor_bottom = NodePath("../PlayButton")
 theme = ExtResource("2_bqqt6")
 text = "quit"
