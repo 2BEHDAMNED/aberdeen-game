@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b6o83cbkw5eqt" path="res://textures/phone.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bws0ajagrkvpt" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="AudioStream" uid="uid://bewnkrx3y16hm" path="res://sounds/walking.mp3" id="2_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://ckje7ofdaevwg" path="res://sounds/flashlight-on.mp3" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://dr8nqu1eycb2j" path="res://scripts/player_camera.gd" id="3_qhqgy"]
 [ext_resource type="AudioStream" uid="uid://b0vuyq76uwhcu" path="res://sounds/flashlight-off.mp3" id="5_qlg0r"]
@@ -129,6 +130,10 @@ _data = {
 [node name="ThePlayer" type="CharacterBody3D" unique_id=661991523]
 disable_mode = 1
 script = ExtResource("1_g2els")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1604269401]
+stream = ExtResource("2_tuyoq")
+pitch_scale = 0.75
 
 [node name="Control" type="Control" parent="." unique_id=1569651697]
 layout_mode = 3
