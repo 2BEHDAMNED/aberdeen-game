@@ -17,6 +17,7 @@ var sprinting = false
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	DialogueManager.play_list(['Hello', 'This is a test', 'Does this work?', 'Vic Hello?'])
 
 func _input(event:InputEvent) -> void:
 	if event is InputEventMouseMotion:

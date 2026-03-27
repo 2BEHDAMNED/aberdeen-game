@@ -5,7 +5,9 @@
 [ext_resource type="AudioStream" uid="uid://bewnkrx3y16hm" path="res://sounds/walking.mp3" id="2_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://ckje7ofdaevwg" path="res://sounds/flashlight-on.mp3" id="3_dqkch"]
 [ext_resource type="Script" uid="uid://dr8nqu1eycb2j" path="res://scripts/player_camera.gd" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://4ihdn564k18" path="res://textures/portraits/em_01.png" id="4_smehm"]
 [ext_resource type="AudioStream" uid="uid://b0vuyq76uwhcu" path="res://sounds/flashlight-off.mp3" id="5_qlg0r"]
+[ext_resource type="Theme" uid="uid://bdkitdw7ewaqg" path="res://themes/new_theme.tres" id="5_ur7pv"]
 
 [sub_resource type="Animation" id="Animation_g2els"]
 length = 0.001
@@ -56,7 +58,7 @@ tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.38),
+"times": PackedFloat32Array(0, 0.43333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
@@ -154,7 +156,7 @@ anchor_bottom = 0.5
 offset_left = -272.0
 offset_top = -204.0
 offset_right = 528.0
-offset_bottom = 395.99854
+offset_bottom = 395.99866
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_3vyb7")
@@ -168,6 +170,41 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 text = "INPUT: KEYBOARD"
+
+[node name="DialogContainer" type="Control" parent="Control" unique_id=872835834]
+visible = false
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 139.0
+grow_horizontal = 2
+scale = Vector2(1, 1.0049349)
+
+[node name="PortraitContainer" type="PanelContainer" parent="Control/DialogContainer" unique_id=1109411488]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 23.0
+offset_right = 341.0
+offset_bottom = 156.0
+
+[node name="Portrait" type="TextureRect" parent="Control/DialogContainer/PortraitContainer" unique_id=1138496313]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_smehm")
+expand_mode = 1
+
+[node name="DialogueContainer" type="PanelContainer" parent="Control/DialogContainer" unique_id=524482082]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 23.0
+offset_right = 857.0
+offset_bottom = 156.0
+
+[node name="Dialogue" type="Label" parent="Control/DialogContainer/DialogueContainer" unique_id=1091934042]
+layout_mode = 2
+theme = ExtResource("5_ur7pv")
+horizontal_alignment = 1
+autowrap_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=574270594]
 shape = SubResource("CapsuleShape3D_3vyb7")

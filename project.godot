@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 SceneManager="*uid://clk2duywp6crm"
+DialogueManager="*uid://chrtn1x7gaxbd"
 
 [display]
 
