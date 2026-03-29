@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://4ihdn564k18" path="res://textures/portraits/em_01.png" id="4_smehm"]
 [ext_resource type="AudioStream" uid="uid://b0vuyq76uwhcu" path="res://sounds/flashlight-off.mp3" id="5_qlg0r"]
 [ext_resource type="Theme" uid="uid://bdkitdw7ewaqg" path="res://themes/new_theme.tres" id="5_ur7pv"]
+[ext_resource type="FontFile" uid="uid://c8n18yn6w1gtc" path="res://fonts/VCR_OSD_MONO_1.001.ttf" id="6_ur7pv"]
 
 [sub_resource type="Animation" id="Animation_g2els"]
 length = 0.001
@@ -127,6 +128,15 @@ _data = {
 &"phone_pullup": SubResource("Animation_qhqgy")
 }
 
+[sub_resource type="FontVariation" id="FontVariation_s1hyc"]
+base_font = ExtResource("6_ur7pv")
+spacing_glyph = 3
+
+[sub_resource type="Theme" id="Theme_y4r1p"]
+default_font = SubResource("FontVariation_s1hyc")
+default_font_size = 12
+Label/fonts/font = SubResource("FontVariation_s1hyc")
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3vyb7"]
 
 [node name="ThePlayer" type="CharacterBody3D" unique_id=661991523]
@@ -172,11 +182,10 @@ offset_bottom = 23.0
 text = "INPUT: KEYBOARD"
 
 [node name="DialogContainer" type="Control" parent="Control" unique_id=872835834]
-visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 139.0
+offset_bottom = 171.15536
 grow_horizontal = 2
 scale = Vector2(1, 1.0049349)
 
@@ -193,7 +202,7 @@ layout_mode = 2
 texture = ExtResource("4_smehm")
 expand_mode = 1
 
-[node name="DialogueContainer" type="PanelContainer" parent="Control/DialogContainer" unique_id=524482082]
+[node name="DialogueContainer" type="Panel" parent="Control/DialogContainer" unique_id=806517869]
 layout_mode = 0
 offset_left = 350.0
 offset_top = 23.0
@@ -201,9 +210,24 @@ offset_right = 857.0
 offset_bottom = 156.0
 
 [node name="Dialogue" type="Label" parent="Control/DialogContainer/DialogueContainer" unique_id=1091934042]
-layout_mode = 2
+layout_mode = 0
+offset_top = 57.0
+offset_right = 507.0
+offset_bottom = 75.0
 theme = ExtResource("5_ur7pv")
 horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="PressEnter" type="Label" parent="Control/DialogContainer/DialogueContainer" unique_id=1930547012]
+visible = false
+layout_mode = 0
+offset_top = 111.33707
+offset_right = 507.0
+offset_bottom = 129.33707
+theme = SubResource("Theme_y4r1p")
+text = "press enter to continue "
+horizontal_alignment = 2
+vertical_alignment = 1
 autowrap_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=574270594]

@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://citbnfpd8xyv2" path="res://scenes/player.tscn" id="1_52yd7"]
 [ext_resource type="PackedScene" uid="uid://d07pk2nfvgdks" path="res://scenes/fade_in.tscn" id="2_8ki8l"]
-[ext_resource type="Environment" uid="uid://ds2f8bsl4l1xg" path="res://environments/base.tres" id="3_kgh0j"]
+
+[sub_resource type="Environment" id="Environment_8ki8l"]
+background_mode = 2
 
 [sub_resource type="BoxMesh" id="BoxMesh_8ki8l"]
 
@@ -15,14 +17,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5890285, 0)
 disable_mode = 0
 
 [node name="FadeIn" parent="." unique_id=1868382498 instance=ExtResource("2_8ki8l")]
+visible = false
 multiplier = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=886916496]
-environment = ExtResource("3_kgh0j")
+environment = SubResource("Environment_8ki8l")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=32857524]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1847202372]
 transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
