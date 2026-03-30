@@ -14,35 +14,43 @@ const GAMEPAD_SENS = 0.3
 var gamepad_enabled = false
 var is_walking = false
 var sprinting = false
+var mouse_locked = true
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	DialogueManager.play_list(['Hello', 'This is a test', 'Does this work?', 'Vic Hello?'])
 
 func _input(event:InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and mouse_locked:
 		gamepad_enabled = false
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 	
+	if Input.is_action_just_pressed("sprint"):
+		sprinting = not sprinting
 	
 	gamepad_enabled = event is InputEventJoypadButton or event is InputEventJoypadMotion
 	if gamepad_enabled:
 		$Control/Label.text = "INPUT: GAMEPAD"
 	else:
 		$Control/Label.text = "INPUT: KEYBOARD"
-
+	
+	if event is InputEventKey:
+		if event.is_pressed() and event.keycode == KEY_ESCAPE:
+			mouse_locked = not mouse_locked
+			if not mouse_locked:
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			else:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 
 func _process(delta: float) -> void:
-	if gamepad_enabled:
+	if gamepad_enabled and mouse_locked:
 		var cam_axis := Input.get_vector("camera_left", "camera_right", "camera_up", "camera_down")
 		head.rotate_y(deg_to_rad(-cam_axis.x * 1.5))
 		camera.rotate_x(deg_to_rad(-cam_axis.y * 1.5))
 	camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
 	
-	if Input.is_action_just_pressed("sprint"):
-		sprinting = not sprinting
 	
 	if not sprinting:
 		walking_sound.pitch_scale = 0.75

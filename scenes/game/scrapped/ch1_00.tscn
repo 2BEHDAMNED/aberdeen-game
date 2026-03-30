@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://3qa5p58nebb8"]
 
-[ext_resource type="PackedScene" uid="uid://citbnfpd8xyv2" path="res://scenes/player.tscn" id="1_52yd7"]
+[ext_resource type="PackedScene" uid="uid://citbnfpd8xyv2" path="res://scenes/game/scrapped/player.tscn" id="1_52yd7"]
 [ext_resource type="PackedScene" uid="uid://d07pk2nfvgdks" path="res://scenes/fade_in.tscn" id="2_8ki8l"]
-
-[sub_resource type="Environment" id="Environment_8ki8l"]
-background_mode = 2
+[ext_resource type="Environment" uid="uid://btgrg2c8gahx7" path="res://environments/debug.tres" id="3_kgh0j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_8ki8l"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kgh0j"]
 
-[node name="Node3D" type="Node3D" unique_id=1927240936]
+[node name="Game" type="Node3D" unique_id=1927240936]
 
 [node name="ThePlayer" parent="." unique_id=839005021 instance=ExtResource("1_52yd7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5890285, 0)
@@ -21,25 +19,16 @@ visible = false
 multiplier = 1.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=886916496]
-environment = SubResource("Environment_8ki8l")
+environment = ExtResource("3_kgh0j")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment" unique_id=32857524]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 5.508318, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1847202372]
-transform = Transform3D(10, 0, 0, 0, 0.2, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(4.825, 0, 0, 0, 0.2, 0, 0, 0, 35.16, 0, 0, 15.152776)
 mesh = SubResource("BoxMesh_8ki8l")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1195759076]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=467159056]
-shape = SubResource("BoxShape3D_kgh0j")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=553898691]
-transform = Transform3D(10, 0, 0, 0, -8.742278e-09, -10, 0, 0.2, -4.371139e-07, 0.6895714, 3.6520295, -5)
-mesh = SubResource("BoxMesh_8ki8l")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2" unique_id=247676680]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D" unique_id=85361130]
 shape = SubResource("BoxShape3D_kgh0j")

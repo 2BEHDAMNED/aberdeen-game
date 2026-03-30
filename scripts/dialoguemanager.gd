@@ -64,19 +64,19 @@ func play_dialogue(text : String, is_array: bool = false):
 		enterquery.visible = false
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_pressed("ui_accept") and is_active:
+	if event.is_action("ui_accept") and event.is_pressed() and is_active:
 		continue_going.emit(is_active_array)
 
 func _get_portrait():
 	if not container:
 		_get_container()
-	portrait = get_node("/root/Node3D/ThePlayer/Control/DialogContainer/PortraitContainer/Portrait")
+	portrait = get_node("/root/Game/ThePlayer/Control/DialogContainer/PortraitContainer/Portrait")
 
 func _get_container():
-	container = get_node("/root/Node3D/ThePlayer/Control/DialogContainer")
+	container = get_node("/root/Game/ThePlayer/Control/DialogContainer")
 
 func _get_enterquery():
-	enterquery = get_node("/root/Node3D/ThePlayer/Control/DialogContainer/DialogueContainer/PressEnter")
+	enterquery = get_node("/root/Game/ThePlayer/Control/DialogContainer/DialogueContainer/PressEnter")
 
 func _get_dialogue():
 	if not container:
@@ -84,6 +84,6 @@ func _get_dialogue():
 	if not enterquery:
 		_get_enterquery()
 	
-	dialogue = get_node("/root/Node3D/ThePlayer/Control/DialogContainer/DialogueContainer/Dialogue")
+	dialogue = get_node("/root/Game/ThePlayer/Control/DialogContainer/DialogueContainer/Dialogue")
 	if dialogue:
 		dialogue.text = ""

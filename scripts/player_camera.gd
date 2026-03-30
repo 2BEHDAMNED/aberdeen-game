@@ -1,10 +1,10 @@
 extends Camera3D
 
 @onready var flashlight := $SpotLight3D
-@export var animator : AnimationPlayer = null
-@export var phone : TextureRect = null
+@export  var animator   : AnimationPlayer = null
+@export  var phone      : TextureRect     = null
 
-@export var flashlight_turn_on_sound : AudioStream = null
+@export var flashlight_turn_on_sound  : AudioStream = null
 @export var flashlight_turn_off_sound : AudioStream = null
 
 @onready var flashlight_sound = $AudioStreamPlayer
