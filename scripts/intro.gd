@@ -74,4 +74,4 @@ func _process(delta: float) -> void:
 				$FramesRect.texture = textures[current_index][1]
 
 func _on_timer_timeout() -> void:
-	SceneManager.goto_scene_via_door("res://scenes/game/ch1_00.tscn")
+	SceneManager.goto_scene_via_door("res://scenes/game/dreams/d1/hallway.tscn")

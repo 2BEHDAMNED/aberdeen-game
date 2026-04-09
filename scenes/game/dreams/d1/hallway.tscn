@@ -1,0 +1,230 @@
+[gd_scene format=3 uid="uid://tvoebvbeih4h"]
+
+[ext_resource type="Shader" uid="uid://bjteieqn31bv7" path="res://shaders/warble.gdshader" id="1_ilne8"]
+[ext_resource type="Script" uid="uid://b7uhaqjrvehlk" path="res://scripts/autoplay_animsprites.gd" id="1_rs6mw"]
+[ext_resource type="SpriteFrames" uid="uid://bfxscvhre4hf2" path="res://frames/dream1/hallway-1/animated.tres" id="3_m7yoo"]
+[ext_resource type="Script" uid="uid://cugg0rqb8tyij" path="res://scripts/clicky.gd" id="5_m7yoo"]
+[ext_resource type="SpriteFrames" uid="uid://cqryo28ap5gjk" path="res://frames/dream1/hallway-2/animated.tres" id="5_ui4mq"]
+[ext_resource type="Theme" uid="uid://bdkitdw7ewaqg" path="res://themes/new_theme.tres" id="6_ui4mq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ilne8"]
+shader = ExtResource("1_ilne8")
+shader_parameter/shaking = false
+shader_parameter/amplitude = 0.5
+shader_parameter/noise_scale = 10.0
+shader_parameter/noise_speed = 10.0
+shader_parameter/opacity = 0.56
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_25pe4"]
+shader = ExtResource("1_ilne8")
+shader_parameter/shaking = true
+shader_parameter/amplitude = 41.18
+shader_parameter/noise_scale = 36.61
+shader_parameter/noise_speed = 10.0
+shader_parameter/opacity = 0.145
+
+[node name="Hallway" type="Node2D" unique_id=1717384514 node_paths=PackedStringArray("sprites")]
+script = ExtResource("1_rs6mw")
+sprites = [NodePath("FirstHalf/Normal"), NodePath("FirstHalf/Distorted"), NodePath("SecondHalf/Normal"), NodePath("SecondHalf/Distorted")]
+
+[node name="FirstHalf" type="Node2D" parent="." unique_id=1309128462]
+
+[node name="Normal" type="AnimatedSprite2D" parent="FirstHalf" unique_id=2099359960]
+material = SubResource("ShaderMaterial_ilne8")
+position = Vector2(512, 384)
+sprite_frames = ExtResource("3_m7yoo")
+frame_progress = 0.96399325
+
+[node name="Distorted" type="AnimatedSprite2D" parent="FirstHalf" unique_id=1711076473]
+material = SubResource("ShaderMaterial_25pe4")
+position = Vector2(512, 384)
+sprite_frames = ExtResource("3_m7yoo")
+frame_progress = 0.31242526
+
+[node name="Clickies" type="Control" parent="FirstHalf" unique_id=1427302139]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DoorLeft" type="TextureButton" parent="FirstHalf/Clickies" unique_id=1310300897]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 768.0
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "2003"
+
+[node name="DoorRight" type="TextureButton" parent="FirstHalf/Clickies" unique_id=1742056827]
+layout_mode = 0
+offset_left = 824.0
+offset_right = 1024.0
+offset_bottom = 768.0
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "2004"
+
+[node name="Forwards" type="TextureButton" parent="FirstHalf/Clickies" unique_id=1235201096 node_paths=PackedStringArray("scene", "scene_to_go_to")]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 148.0
+offset_right = 824.0
+offset_bottom = 601.0
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "Go Forwards"
+scene = NodePath("../..")
+scene_to_go_to = NodePath("../../../SecondHalf")
+
+[node name="Page" type="TextureButton" parent="FirstHalf/Clickies" unique_id=830232944]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 667.0
+offset_right = 285.0
+offset_bottom = 761.0
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "Note"
+
+[node name="Backwards" type="TextureButton" parent="FirstHalf/Clickies" unique_id=666075252]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -252.5
+offset_top = -118.0
+offset_right = 252.5
+grow_horizontal = 2
+grow_vertical = 0
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "Turn Back"
+
+[node name="Label" type="Label" parent="FirstHalf/Clickies" unique_id=627228414]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -51.0
+offset_right = 20.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_ui4mq")
+
+[node name="SecondHalf" type="Node2D" parent="." unique_id=1363199658]
+
+[node name="Normal" type="AnimatedSprite2D" parent="SecondHalf" unique_id=1324183040]
+material = SubResource("ShaderMaterial_ilne8")
+position = Vector2(512, 384)
+sprite_frames = ExtResource("5_ui4mq")
+frame_progress = 0.55054224
+
+[node name="Distorted" type="AnimatedSprite2D" parent="SecondHalf" unique_id=259083768]
+material = SubResource("ShaderMaterial_25pe4")
+position = Vector2(512, 384)
+sprite_frames = ExtResource("5_ui4mq")
+
+[node name="Clickies" type="Control" parent="SecondHalf" unique_id=371313432]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1024.0
+offset_bottom = 768.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DoorLeft" type="TextureButton" parent="SecondHalf/Clickies" unique_id=1332750960]
+layout_mode = 0
+offset_right = 95.0
+offset_bottom = 768.0
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "2001"
+
+[node name="DoorRight" type="TextureButton" parent="SecondHalf/Clickies" unique_id=2144514076]
+layout_mode = 0
+offset_left = 929.0
+offset_right = 1024.0
+offset_bottom = 768.0
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "2002"
+
+[node name="Forwards" type="TextureButton" parent="SecondHalf/Clickies" unique_id=983189783]
+layout_mode = 0
+offset_left = 356.0
+offset_top = 132.0
+offset_right = 657.0
+offset_bottom = 572.0
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "Exit"
+
+[node name="CardboardBox" type="TextureButton" parent="SecondHalf/Clickies" unique_id=306341627]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 521.0
+offset_right = 276.0
+offset_bottom = 701.0
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "Cardboard Box"
+
+[node name="Plant" type="TextureButton" parent="SecondHalf/Clickies" unique_id=2004068044]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 307.0
+offset_right = 904.0
+offset_bottom = 623.0
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "Plant"
+
+[node name="Backwards" type="TextureButton" parent="SecondHalf/Clickies" unique_id=1244858521 node_paths=PackedStringArray("scene", "scene_to_go_to")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -252.5
+offset_top = -118.0
+offset_right = 252.5
+grow_horizontal = 2
+grow_vertical = 0
+ignore_texture_size = true
+stretch_mode = 0
+script = ExtResource("5_m7yoo")
+title = "Go Back"
+scene = NodePath("../..")
+scene_to_go_to = NodePath("../../../FirstHalf")
+
+[node name="Label" type="Label" parent="SecondHalf/Clickies" unique_id=652710202]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -51.0
+offset_right = 20.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_ui4mq")
